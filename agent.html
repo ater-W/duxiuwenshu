@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能问答 - 独秀文枢</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .embed-wrapper{max-width:1200px;margin:2.5rem auto;padding:0 1rem}
+        .embed-header{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1rem}
+        .agent-frame{width:100%;height:75vh;border:0;border-radius:12px;box-shadow:var(--shadow-md);overflow:hidden}
+        .agent-fallback{display:flex;gap:0.6rem;align-items:center;margin-top:0.8rem}
+        .agent-note{font-size:0.9rem;color:var(--text-muted);margin-top:0.6rem}
+        .back-link{background:transparent;border:none;color:var(--white-color);font-weight:600;cursor:pointer}
+        .feature-tag{background:var(--white-color);color:var(--primary-color);padding:0.5rem 0.9rem;border-radius:18px;border:1px solid rgba(123,44,191,0.08);text-decoration:none}
+        .feature-tag:hover{background:var(--primary-color);color:var(--white-color)}
+    </style>
+</head>
+<body>
+    <header class="header" style="border-radius:0 0 var(--radius-xl) var(--radius-xl);">
+        <div class="header-overlay">
+            <div class="header-content">
+                <div class="header-text">
+                    <div class="logo-container">
+                        <span class="logo-icon"><i class="fas fa-book-open"></i></span>
+                        <h1 class="site-title">独秀文枢</h1>
+                    </div>
+                    <p class="site-slogan">尊师重道，敬业乐群</p>
+                </div>
+                <div style="display:flex;align-items:center;gap:1rem;">
+                    <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> 返回首页</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="embed-wrapper">
+        <div class="embed-header">
+            <div>
+                <h2 style="color:var(--primary-color);margin:0">智能问答</h2>
+                <div class="agent-note">扣子平台创建的智能体。如果 iframe 无法加载，请使用下方“在新窗口打开”。</div>
+            </div>
+            <div>
+                <a class="feature-tag" href="https://www.coze.cn/store/agent/7571779546379223090?bot_id=true" target="_blank" rel="noopener">在新窗口打开 <i class="fas fa-external-link-alt" style="margin-left:6px"></i></a>
+            </div>
+        </div>
+
+        <!-- 使用 iframe 嵌入扣子平台的智能体 -->
+        <iframe id="agentFrame" class="agent-frame" src="https://www.coze.cn/store/agent/7571779546379223090?bot_id=true" title="独秀文枢智能体 ">
+            当前浏览器不支持内嵌内容，请点击这里在新窗口打开：
+            <a href="https://www.coze.cn/store/agent/7571779546379223090?bot_id=true" target="_blank" rel="noopener">打开智能体</a>
+        </iframe>
+
+        <div class="agent-fallback">
+            <button onclick="document.getElementById('agentFrame').src='https://www.coze.cn/store/agent/7571779546379223090?bot_id=true'" class="feature-tag">重新加载嵌入</button>
+            <a class="feature-tag" href="https://www.coze.cn/store/agent/7571779546379223090?bot_id=true" target="_blank" rel="noopener">在新窗口打开智能体</a>
+        </div>
+    </main>
+
+</body>
+</html>

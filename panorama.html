@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>全景师大 · 独秀文枢</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Pannellum CSS (360° 全景查看器) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
+  <style>
+    .panorama-wrap{max-width:1200px;margin:2rem auto;padding:0 1rem}
+    #panorama{width:100%;height:70vh;border-radius:12px;overflow:hidden;box-shadow:var(--shadow-md)}
+    .panorama-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+    .note{color:var(--text-secondary);font-size:0.95rem}
+    .feature-tag{background:var(--white-color);color:var(--primary-color);padding:0.5rem 0.9rem;border-radius:18px;border:1px solid rgba(123,44,191,0.08);text-decoration:none}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-overlay">
+      <div class="header-content">
+        <div class="header-text">
+          <div class="logo-container">
+            <span class="logo-icon"><i class="fas fa-book-open"></i></span>
+            <h1 class="site-title">独秀文枢</h1>
+          </div>
+          <p class="site-slogan">尊师重道，敬业乐群</p>
+        </div>
+        <div>
+          <a href="index.html" class="feature-tag">返回首页</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="panorama-wrap">
+    <div class="panorama-header">
+      <h2 style="color:var(--primary-color);margin:0">全景师大</h2>
+      <div class="note">演示 360° 全景：拖拽旋转、滚轮缩放、双击全屏。</div>
+    </div>
+
+    <!-- 全景容器 -->
+    <div id="panorama"></div>
+  </main>
+
+  <!-- Pannellum 脚本 -->
+  <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+  <script>
+    // 示例全景图（可替换为本地 image/your-panorama.jpg）
+    const panoUrl = 'https://pannellum.org/images/bma-1.jpg';
+
+    pannellum.viewer('panorama', {
+      "type": "equirectangular",
+      "panorama": panoUrl,
+      "autoLoad": true,
+      "autoRotate": -2,
+      "showZoomCtrl": true,
+      "showFullscreenCtrl": true,
+      "compass": false
+    });
+  </script>
+</body>
+</html>
